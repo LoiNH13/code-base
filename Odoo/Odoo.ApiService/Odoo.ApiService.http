@@ -1,0 +1,6 @@
+@Odoo.ApiService_HostAddress = http://localhost:5171
+
+GET {{Odoo.ApiService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

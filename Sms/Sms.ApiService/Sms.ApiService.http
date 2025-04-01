@@ -1,0 +1,28 @@
+# curl -X 'GET' 
+#  'https://localhost:7143/api/resmos?pageNumber=1&pageSize=12' 
+#  -H 'accept: text/plain'
+GET {{Sms.ApiService_HostAddress}}/api/resmos?pageNumber=1&pageSize=12
+accept: text/plain
+
+###
+
+# curl -X 'POST' 
+#  'https://localhost:7143/api/resmos' 
+#  -H 'accept: */*' 
+#  -H 'Content-Type: application/json' 
+#  -d '{
+#  "servicePhone": "8080",
+#  "pricePerMo": 1000,
+#  "freeMtPerMo": 1
+#}'
+POST {{Sms.ApiService_HostAddress}}/api/resmos
+accept: */*
+Content-Type: application/json
+
+{
+  "servicePhone": "8081",
+  "pricePerMo": 1000,
+  "freeMtPerMo": 1
+}
+
+###

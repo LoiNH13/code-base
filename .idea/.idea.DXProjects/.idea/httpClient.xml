@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HttpClientEndpointsTabState">
+    <option name="requestToText" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;4dec3e2ef14d283d4f4a4f0ceae160e3b88a8bde&quot; value=&quot;###&amp;#10;POST http://localhost:5574/api/authentication/login-sso-vietmap&quot; /&gt;&#10;  &lt;entry key=&quot;870974a79e243f16f701a3477065d13bc6e7f1bb&quot; value=&quot;###&amp;#10;GET http://localhost:5574/api/customers&quot; /&gt;&#10;  &lt;entry key=&quot;6e2c0fb6c5bccb8b3c2ceabea12155ba6a46c041&quot; value=&quot;###&amp;#10;GET http://localhost:5574/api/users/tree&quot; /&gt;&#10;  &lt;entry key=&quot;66fb3b9324b1140e0fb5a023b043d4a963063ce8&quot; value=&quot;###&amp;#10;POST http://localhost:5574/api/authentication/login&quot; /&gt;&#10;  &lt;entry key=&quot;5a743b4496a170060b1590fa58713507dc13c9f4&quot; value=&quot;###&amp;#10;PUT http://localhost:5574/api/monthly-report-items/{{monthlyReportId}}&quot; /&gt;&#10;  &lt;entry key=&quot;65b70bc7323567259439bccf671c3d3c7e3552e1&quot; value=&quot;###&amp;#10;GET http://localhost:5574/api/categories?&amp;#10;    pageNumber={{$placeholder}}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+</project>

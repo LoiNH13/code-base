@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <DockerfileContext>..\..</DockerfileContext>
+        <OutputType>Exe</OutputType>
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+        <Version>1.7.6</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="logs\**" />
+        <Content Remove="logs\**" />
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+        <EmbeddedResource Remove="logs\**" />
+        <None Remove="logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Common\ApiService\ApiService.csproj" />
+        <ProjectReference Include="..\..\Odoo\Odoo.Persistence\Odoo.Persistence.csproj" />
+        <ProjectReference Include="..\Sale.Background\Sale.Background.csproj" />
+        <ProjectReference Include="..\Sale.Infrastructure\Sale.Infrastructure.csproj" />
+        <ProjectReference Include="..\Sale.Persistence\Sale.Persistence.csproj" />
+    </ItemGroup>
+    <Target Name="Debug" AfterTargets="Pack" Condition="'$(Configuration)' == 'Debug'">
+        <Exec Command="sh build.sh $(PackageVersion)" />
+    </Target>
+</Project>

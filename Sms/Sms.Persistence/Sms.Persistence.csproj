@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Common\Persistence\Persistence.csproj" />
+        <ProjectReference Include="..\Sms.Application\Sms.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Specifications\" />
+    </ItemGroup>
+
+</Project>

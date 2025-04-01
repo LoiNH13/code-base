@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-MOT.ApiService-7578c91b-5f5f-4953-b904-586034c7cae6</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <OutputType>Exe</OutputType>
+        <IsPackable>true</IsPackable>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Version>1.1.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+        <PackageReference Include="SoapCore" Version="1.1.0.51" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="7.0.0" />
+		<PackageReference Include="System.Security.Cryptography.Xml" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Common\ApiService\ApiService.csproj" />
+        <ProjectReference Include="..\MOT.Infrastructure\MOT.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+    </ItemGroup>
+
+    <Target Name="Debug" AfterTargets="Pack" Condition="'$(Configuration)' == 'Debug'">
+        <Exec Command="sh build.sh $(PackageVersion)" />
+    </Target>
+</Project>

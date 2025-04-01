@@ -1,0 +1,52 @@
+### Login by Password
+POST https://localhost:5001/api/authentication/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+
+### Login by Vietmap SSO
+POST https://localhost:5001/api/authentication/login-ssovietmap
+Content-Type: application/json
+
+{
+  "clientId": "your-client-id",
+  "accessToken": "your-access-token"
+}
+
+### Get Profile
+GET https://localhost:5001/api/authentication/profile
+Authorization: Bearer your-jwt-token
+
+### Get Categories
+GET https://localhost:5001/api/categories
+Authorization: Bearer your-jwt-token
+Content-Type: application/json
+
+### Create Category
+POST https://localhost:5001/api/categories
+Authorization: Bearer your-jwt-token
+Content-Type: application/json
+
+{
+  "name": "New Category",
+  "odooRef": 123,
+  "weight": 10,
+  "isShowSalePlan": true,
+  "isShowMonthlyReport": false
+}
+
+### Update Category
+PUT https://localhost:5001/api/categories/{categoryId}
+Authorization: Bearer your-jwt-token
+Content-Type: application/json
+
+{
+  "name": "Updated Category",
+  "odooRef": 123,
+  "weight": 10,
+  "isShowSalePlan": true,
+  "isShowMonthlyReport": false
+}

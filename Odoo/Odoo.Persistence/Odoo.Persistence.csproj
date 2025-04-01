@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Specifications\**" />
+		<EmbeddedResource Remove="Specifications\**" />
+		<None Remove="Specifications\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Common\Persistence\Persistence.csproj" />
+		<ProjectReference Include="..\Odoo.Domain\Odoo.Domain.csproj" />
+	</ItemGroup>
+
+</Project>
